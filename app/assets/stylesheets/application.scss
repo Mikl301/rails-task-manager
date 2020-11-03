@@ -1,0 +1,13 @@
+@import "bootstrap/scss/bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+@import "tasks.scss";
+
+* {
+  font-family: monospace;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(247, 247, 245);
+}

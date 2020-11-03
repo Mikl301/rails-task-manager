@@ -1,11 +1,13 @@
 <h1>My tasks</h1>
 
-<ul>
+<ul class="list-group mb-2">
   <% @tasks.each do |task| %>
-  <li>
-    <input type="checkbox" <%= task.completed ? "checked" : "" %> disabled>
-    <%= link_to task.title, task_path(task)  %> - 
-    <%= link_to "Delete task",
+  <li class="list-group-item d-flex justify-content-between">
+    <div>
+    <input type="checkbox" <%= task.completed ? "checked" : "" %> onclick="return false">
+    <%= link_to task.title, task_path(task)  %>
+    </div>
+    <%= link_to icon('fas', 'trash'),
                 task_path(task),
                 method: :delete,
                 data: { confirm: "Delete #{task.title}?" }  %>
@@ -13,4 +15,4 @@
   <% end %>
 </ul>
 
-<%= link_to "Add a new task", new_task_path  %>
+<%= link_to icon('fas', 'plus', 'Add a new task'), new_task_path, class: "pl-4"  %>
