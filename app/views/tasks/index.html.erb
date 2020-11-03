@@ -3,7 +3,7 @@
 <ul>
   <% @tasks.each do |task| %>
   <li>
-    <input type="checkbox" <%= task.completed ? "checked" : "" %>>
+    <input type="checkbox" <%= task.completed ? "checked" : "" %> disabled>
     <%= link_to task.title, task_path(task)  %> - 
     <%= link_to "Delete task",
                 task_path(task),
